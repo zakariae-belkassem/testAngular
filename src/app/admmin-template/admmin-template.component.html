@@ -1,18 +1,19 @@
-<mat-toolbar color = "primary">
-  <button mat-icon-button >
+<mat-toolbar color = "accent">
+  <button mat-icon-button (click)="MyDrawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <button mat-button routerLink = "/home"> Home </button>
-  <button mat-button routerLink = "/profile"> Profile </button>
+  <button mat-button routerLink = "/admin/home"> Home </button>
+  <button mat-button routerLink = "/admin/profile"> Profile </button>
   <button mat-button [matMenuTriggerFor]="importMenu"> Import </button>
- <button mat-raised-button routerLink="/login"> Login </button>
+ <button mat-stroked-button color = "accent"  (click)="logout()"> Logout </button>
   <mat-menu #importMenu yPosition="below">
     <button mat-menu-item>Load chi 7aja</button>
     <button mat-menu-item> chi 7aja akhra</button>
   </mat-menu>
+
 </mat-toolbar>
 <mat-drawer-container>
-  <mat-drawer mode="side" opened="false" position="start">
+  <mat-drawer mode="side" opened="false" position="start" #MyDrawer>
     <mat-list>
       <button mat-button>
         Test1
